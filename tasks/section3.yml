@@ -418,7 +418,7 @@
       - rule_3.6.2
 
 - name: "SCORED | 3.6.2 | PATCH | Ensure default deny firewall policy"
-  firewalld:
+  ansible.posix.firewalld:
       state: enabled
       zone: drop
       permanent: true
@@ -471,7 +471,7 @@
       - notimplemented
 
 - name: "SCORED | 3.6.5 | PATCH | Ensure firewall rules exist for all open ports"
-  firewalld:
+  ansible.posix.firewalld:
       service: "{{ item }}"
       state: enabled
       zone: drop
